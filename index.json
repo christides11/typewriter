@@ -1,0 +1,22 @@
+{
+  "api/editor/index.html": {
+    "href": "api/editor/index.html",
+    "title": "Editor API | Typewriter",
+    "keywords": "Editor API"
+  },
+  "api/runtime/index.html": {
+    "href": "api/runtime/index.html",
+    "title": "Runtime API | Typewriter",
+    "keywords": "Runtime API"
+  },
+  "docs/quickstart.html": {
+    "href": "docs/quickstart.html",
+    "title": "Quickstart | Typewriter",
+    "keywords": "Quickstart Warning The documentation is far from being complete and will be worked on in the following weeks. If you have any questions or need help, please reach out on our Discord server. Installation After getting access to our GitHub organization, you will be able to install Typewriter through Unity's Package Manager. Click the \"+\" button in the top left corner and select \"Add package from git URL...\": Paste the following URL into the input field: https://github.com/aarthificial-gamedev/typewriter.git If you encounter any problems please refer to the Unity's installation guide or reach out on our Discord server. Getting started The package comes with a Visual Novel sample that shows how to implement a simple text-based dialogue system with multiple choices. You can import it from the Package Manager: Open the SampleScene located in the Assets/Samples/Typewriter/<version>/VisualNovel/Scenes directory and press play. You'll be presented with multiple buttons that demonstrate different types of conversations: Linear showcases a simple, linear dialogue. Choices presents the player with a choice. Contextual changes the dialogue based on the context. You can open the Typewriter Editor using Tools > Typewriter > Editor and explore the entries that make up the dialogue. For clarity, each conversation has been placed in its own table."
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "Typewriter",
+    "keywords": "Typewriter Typewriter is a framework for building context-aware dialogue systems in Unity. The architecture was inspired by solutions from Firewatch and The Last of Us, both of which were based on Valve's Fuzzy Pattern Matching approach. The basic idea is to model the dialogue as a set of criteria that have to be met for a given line to occur. The framework does not make any assumptions about the audiovisual presentation of the dialogue and can be used for both textual and voice acted games. It is not a drop-in solution but rather a foundation for building your own systems. Good programming knowledge is necessary to use it. Note Typewriter has been released for educational purposes. It probably won't be developed further."
+  }
+}
