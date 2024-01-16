@@ -34,6 +34,8 @@ jobs:
           git commit -am "fix: Samples => Samples~"
         fi
         git push -f -u origin upm
+      env:
+        PKG_ROOT: /
     - name: Create upm git tag
       if: steps.semantic.outputs.new_release_published == 'true'
       run: |
