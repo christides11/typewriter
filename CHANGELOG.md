@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/christides11/typewriter/compare/v1.1.0...v1.1.1) (2024-01-16)
+
+
+### Bug Fixes
+
+* asmdef for samples ([cfc1c0d](https://github.com/christides11/typewriter/commit/cfc1c0da22131f7329a21206580afa7403be0cb8))
+
 # [1.1.0](https://github.com/christides11/typewriter/compare/v1.0.2...v1.1.0) (2024-01-16)
 
 
