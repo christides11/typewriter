@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/christides11/typewriter/compare/v1.0.2...v1.1.0) (2024-01-16)
+
+
+### Features
+
+* Extensions to get back invoked entry ([33db58c](https://github.com/christides11/typewriter/commit/33db58cfea0a7621fae892b0abbed83effd18d2e))
+
 ## [1.0.2](https://github.com/christides11/typewriter/compare/v1.0.1...v1.0.2) (2024-01-16)
 
 
