@@ -42,6 +42,10 @@ namespace Aarthificial.Typewriter {
 #endif
         return _instance;
       }
+      set {
+        HasCachedInstance = true;
+        _instance = value;
+      }
     }
 
     private void OnEnable() {
