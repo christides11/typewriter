@@ -1,0 +1,16 @@
+{
+    "name": "Typewriter.VisualNovel",
+    "rootNamespace": "",
+    "references": [
+        "GUID:994c44ed6ed9a104386888aa182db7d8"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
