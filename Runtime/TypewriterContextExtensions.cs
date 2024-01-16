@@ -40,6 +40,25 @@ namespace Aarthificial.Typewriter {
       return false;
     }
 
+    public static bool TryInvoke(
+        this ITypewriterContext provider,
+        EntryReference reference,
+        out BaseEntry match) {
+      match = null;
+      return reference.TryGetEntry(out var entry) && provider.TryInvoke(entry, out match);
+    }
+
+    public static bool TryInvoke(
+      this ITypewriterContext provider,
+      BaseEntry entry,
+      out BaseEntry match) {
+      if (entry.Test(provider)) {
+        return provider.Process(entry, out match);
+      }
+      match = null;
+      return false;
+    }
+
     public static bool Process(
       this ITypewriterContext provider,
       EntryReference reference
@@ -58,6 +77,18 @@ namespace Aarthificial.Typewriter {
     ) {
       entry.Apply(provider);
       if (!provider.FindMatchingRule(entry.ID, out var match)) {
+        return false;
+      }
+      match.Invoke(provider);
+      return true;
+    }
+
+    public static bool Process(
+      this ITypewriterContext provider,
+      BaseEntry entry,
+      out BaseEntry match) {
+      entry.Apply(provider);
+      if (!provider.FindMatchingRule(entry.ID, out match)) {
         return false;
       }
       match.Invoke(provider);
