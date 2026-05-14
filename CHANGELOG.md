@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/christides11/typewriter/compare/v1.2.0...v1.2.1) (2026-05-14)
+
+
+### Bug Fixes
+
+* Workflow ([6575ecd](https://github.com/christides11/typewriter/commit/6575ecd66e5bd24deeda2d248ae8f8ba8b2df820))
+
 # [1.2.0](https://github.com/christides11/typewriter/compare/v1.1.1...v1.2.0) (2026-05-14)
 
 
