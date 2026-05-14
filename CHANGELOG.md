@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/christides11/typewriter/compare/v1.2.2...v1.2.3) (2026-05-14)
+
+
+### Bug Fixes
+
+* Fix entry creation/deletion not being saved ([cb5cb51](https://github.com/christides11/typewriter/commit/cb5cb5190e75e7617e5255a51a543444ef6efc56))
+
 ## [1.2.2](https://github.com/christides11/typewriter/compare/v1.2.1...v1.2.2) (2026-05-14)
 
 

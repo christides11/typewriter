@@ -1,7 +1,7 @@
 {
   "name": "com.christides.typewriter",
   "displayName": "Typewriter",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "unity": "2021.1",
   "description": "A tool for creating context-aware dialogue systems in Unity.",
   "keywords": [
