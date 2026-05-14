@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/christides11/typewriter/compare/v1.1.1...v1.2.0) (2026-05-14)
+
+
+### Features
+
+* Photon Quantum support ([a61d975](https://github.com/christides11/typewriter/commit/a61d9759ec9fc6258e97a881541ea8eae8484168))
+
 ## [1.1.1](https://github.com/christides11/typewriter/compare/v1.1.0...v1.1.1) (2024-01-16)
 
 
