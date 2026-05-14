@@ -208,6 +208,7 @@ namespace Aarthificial.Typewriter.Editor.Layout {
 
       Refresh();
       TypewriterUtils.Events.OnEntrySelected(entry.ID);
+      EditorUtility.SetDirty(_table);
     }
 
     private void MoveEntries(DatabaseTable table) {
@@ -226,6 +227,7 @@ namespace Aarthificial.Typewriter.Editor.Layout {
 
       Refresh();
       TypewriterUtils.Events.OnEntrySelected(id);
+      EditorUtility.SetDirty(_table);
     }
 
     private void RemoveEntries(IEnumerable<SimpleList.ItemData> entries) {
@@ -241,6 +243,7 @@ namespace Aarthificial.Typewriter.Editor.Layout {
       }
 
       Refresh();
+      EditorUtility.SetDirty(_table);
     }
 
     private void HandleGeometryChanged(GeometryChangedEvent _) {
