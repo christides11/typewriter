@@ -1,12 +1,23 @@
 {
-  "name": "Aarthificial.Typewriter.Tests",
-  "rootNamespace": "Aarthificial.Typewriter.Tests",
-  "references": [
-    "Aarthificial.Typewriter"
-  ],
-  "optionalUnityReferences": [
-    "TestAssemblies"
-  ],
-  "includePlatforms": [],
-  "excludePlatforms": []
+    "name": "Aarthificial.Typewriter.Tests",
+    "rootNamespace": "Aarthificial.Typewriter.Tests",
+    "references": [
+        "Aarthificial.Typewriter",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "Quantum.Simulation"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

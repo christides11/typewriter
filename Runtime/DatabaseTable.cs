@@ -1,11 +1,20 @@
 ﻿using Aarthificial.Typewriter.Entries;
 using System;
 using System.Collections.Generic;
+#if TYPEWRITER_QUANTUM
+using Quantum;
+#endif
 using UnityEngine;
 
 namespace Aarthificial.Typewriter {
   [Serializable]
-  public class DatabaseTable : ScriptableObject {
+  public class DatabaseTable :
+#if TYPEWRITER_QUANTUM
+    AssetObject
+#else
+    ScriptableObject
+#endif
+  {
     public string TableName;
     [SerializeReference] public List<RuleEntry> Rules = new();
     [SerializeReference] public List<FactEntry> Facts = new();

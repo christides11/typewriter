@@ -1,12 +1,22 @@
 ﻿using Aarthificial.Typewriter.Entries;
 using System;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
-using UnityEngine.Assertions;
+using Assert = UnityEngine.Assertions.Assert;
+#if TYPEWRITER_QUANTUM
+using Quantum;
+#endif
 
 namespace Aarthificial.Typewriter {
-  public class TypewriterDatabase : ScriptableObject,
+  public class TypewriterDatabase :
+#if TYPEWRITER_QUANTUM
+    AssetObject,
+#else
+    ScriptableObject,
+#endif
     ISerializationCallbackReceiver {
     public delegate void EntryAction(
       BaseEntry entry,

@@ -2,6 +2,7 @@ using Aarthificial.Typewriter.Editor.Extensions;
 using Aarthificial.Typewriter.Editor.Layout;
 using Aarthificial.Typewriter.Editor.Layout.Inspector;
 using UnityEditor;
+using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -44,9 +45,25 @@ namespace Aarthificial.Typewriter.Editor {
       Refresh();
     }
 
+    [OnOpenAsset]
+    public static bool OpenGraphAsset(int instanceID, int line)
+    {
+      var asset = EditorUtility.EntityIdToObject(instanceID);
+      if (!(asset is TypewriterDatabase)) return false;
+
+      var ew = OpenWindow(asset as TypewriterDatabase);
+      ew.Focus();
+      return true;
+    }
+
     [MenuItem("Tools/Typewriter/Editor")]
     public static void Open() {
       GetWindow<TypewriterEditor>();
+    }
+
+    public static TypewriterEditor OpenWindow(TypewriterDatabase database) {
+      TypewriterDatabase.Instance = database;
+      return GetWindow<TypewriterEditor>();
     }
 
     [MenuItem("Tools/Typewriter/Recreate lookup")]

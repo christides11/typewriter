@@ -29,10 +29,10 @@ namespace Aarthificial.Typewriter.Editor.Localization {
 
     public SerializedProperty Property {
       set {
-        _collectionName = value?.FindPropertyRelative("m_TableReference")
+        _collectionName = value?.FindPropertyRelative("m_TableReference")?
           .FindPropertyRelative("m_TableCollectionName");
 
-        _entryKeyId = value?.FindPropertyRelative("m_TableEntryReference")
+        _entryKeyId = value?.FindPropertyRelative("m_TableEntryReference")?
           .FindPropertyRelative("m_KeyId");
 
         Update();
