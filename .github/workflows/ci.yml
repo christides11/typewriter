@@ -13,7 +13,7 @@ jobs:
         fetch-depth: 0
     - name: Semantic release
       id: semantic
-      uses: cycjimmy/semantic-release-action@v3.2.0
+      uses: cycjimmy/semantic-release-action@v3.4.2
       with:
         extra_plugins: |
           @semantic-release/changelog
@@ -24,7 +24,7 @@ jobs:
     - name: Create upm branch
       run: |
         git branch -d upm &> /dev/null || echo upm branch not found
-        git checkout upm
+        git checkout -b upm
         git mv -k Runtime/Quantum.Simulation.asmref Runtime/Quantum.Simulation.asmref~
         git mv -k Runtime/Quantum.Simulation.asmref.meta Runtime/Quantum.Simulation.asmref.meta~
         git mv -k Runtime/Aarthificial.Typewriter.asmdef~ Runtime/Aarthificial.Typewriter.asmdef
@@ -55,7 +55,7 @@ jobs:
         fetch-depth: 0
     - name: Semantic release
       id: semantic
-      uses: cycjimmy/semantic-release-action@v3.2.0
+      uses: cycjimmy/semantic-release-action@v3.4.2
       with:
         extra_plugins: |
           @semantic-release/changelog
@@ -66,7 +66,8 @@ jobs:
     - name: Create upmquantum branch
       run: |
         git branch -d upmquantum &> /dev/null || echo upmquantum branch not found
-        git checkout upmquantum
+        git status
+        git checkout -b upmquantum
         git mv -k Runtime/Quantum.Simulation.asmref~ Runtime/Quantum.Simulation.asmref
         git mv -k Runtime/Quantum.Simulation.asmref.meta~ Runtime/Quantum.Simulation.asmref.meta
         git mv -k Runtime/Aarthificial.Typewriter.asmdef Runtime/Aarthificial.Typewriter.asmdef~
