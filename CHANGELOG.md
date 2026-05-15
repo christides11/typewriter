@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/christides11/typewriter/compare/v1.2.3...v1.3.0) (2026-05-15)
+
+
+### Features
+
+* Moved localized entries to core instead of sample ([dd25843](https://github.com/christides11/typewriter/commit/dd258431ac54607924e15c36c50669f10e36b366))
+
 ## [1.2.3](https://github.com/christides11/typewriter/compare/v1.2.2...v1.2.3) (2026-05-14)
 
 
