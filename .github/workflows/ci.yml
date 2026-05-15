@@ -23,6 +23,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Create upm branch
       run: |
+        git checkout main
         git branch -d upm &> /dev/null || echo upm branch not found
         git checkout -b upm
         git mv -k Runtime/Quantum.Simulation.asmref Runtime/Quantum.Simulation.asmref~
@@ -48,6 +49,7 @@ jobs:
         TAG: upm/v${{ steps.semantic.outputs.new_release_version }}
     - name: Create upmquantum branch
       run: |
+        git checkout main
         git branch -d upmquantum &> /dev/null || echo upmquantum branch not found
         git status
         git checkout -b upmquantum
