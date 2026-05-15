@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/christides11/typewriter/compare/v1.3.1...v1.3.2) (2026-05-15)
+
+
+### Bug Fixes
+
+* ci fixes ([786225f](https://github.com/christides11/typewriter/commit/786225fc3c3a0baa0632760785d11a7378e0550c))
+
 ## [1.3.1](https://github.com/christides11/typewriter/compare/v1.3.0...v1.3.1) (2026-05-15)
 
 
