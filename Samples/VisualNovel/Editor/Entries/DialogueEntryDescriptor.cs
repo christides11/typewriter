@@ -10,6 +10,6 @@
 /// In this simple example we change the name of the entry to "Dialogue".
 /// </remarks>
 [CustomEntryDescriptor(typeof(DialogueEntry))]
-public class TextEntryDescriptor : RuleEntryDescriptor {
+public class DialogueEntryDescriptor : RuleEntryDescriptor {
   public override string Name => "Dialogue";
 }

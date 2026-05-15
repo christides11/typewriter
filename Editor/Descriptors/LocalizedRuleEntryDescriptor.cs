@@ -8,7 +8,7 @@ using UnityEngine.Localization;
 namespace Aarthificial.Typewriter.Editor.Descriptors {
   [CustomEntryDescriptor(typeof(LocalizedRuleEntry))]
   public class LocalizedRuleEntryDescriptor : RuleEntryDescriptor {
-    public override string Name => "Text";
+    public override string Name => "Localized Rule";
 
     public override void HandleEntryCreated(
       BaseEntry entry,

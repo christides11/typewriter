@@ -17,7 +17,7 @@ using UnityEngine.UIElements;
 /// the very top.
 /// </remarks>
 [CustomPropertyDrawer(typeof(DialogueEntry))]
-public class TextEntryPropertyDrawer : BaseEntryPropertyDrawer {
+public class DialogueEntryPropertyDrawer : BaseEntryPropertyDrawer {
   protected override IEnumerable<string> GetHandledFields() =>
     base.GetHandledFields().Append(nameof(DialogueEntry.Text));
 
