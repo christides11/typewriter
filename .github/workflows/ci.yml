@@ -46,23 +46,6 @@ jobs:
         git push origin --tags
       env:
         TAG: upm/v${{ steps.semantic.outputs.new_release_version }}
-  release-quantum:
-    name: release-quantum
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-    - name: Semantic release
-      id: semantic
-      uses: cycjimmy/semantic-release-action@v3.4.2
-      with:
-        extra_plugins: |
-          @semantic-release/changelog
-          @semantic-release/git
-        branch: main
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Create upmquantum branch
       run: |
         git branch -d upmquantum &> /dev/null || echo upmquantum branch not found
