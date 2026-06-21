@@ -14,7 +14,7 @@ namespace Aarthificial.Typewriter.Editor.References {
   ///   Displays the contents of a Typewriter database in a form of expandable
   ///   tree.
   /// </summary>
-  public class DatabaseTreeView : TreeView {
+  public class DatabaseTreeView : TreeView<int> {
     private static readonly Texture2D _tableIcon =
       Resources.Load<Texture2D>("Textures/Table");
 
@@ -28,7 +28,7 @@ namespace Aarthificial.Typewriter.Editor.References {
       BaseEntry currentEntry,
       Action<BaseEntry> selectionHandler,
       EntryFilterAttribute filter
-    ) : base(new TreeViewState()) {
+    ) : base(new TreeViewState<int>()) {
       Filter = filter;
       _currentEntry = currentEntry;
       _selectionHandler = selectionHandler;
@@ -48,14 +48,14 @@ namespace Aarthificial.Typewriter.Editor.References {
         Reload();
       }
     }
-    private TreeViewItem Root { get; set; }
+    private TreeViewItem<int> Root { get; set; }
 
-    protected override bool CanMultiSelect(TreeViewItem item) {
+    protected override bool CanMultiSelect(TreeViewItem<int> item) {
       return false;
     }
 
-    protected override TreeViewItem BuildRoot() {
-      Root = new TreeViewItem(-1, -1);
+    protected override TreeViewItem<int> BuildRoot() {
+      Root = new TreeViewItem<int>(-1, -1);
       var id = 1;
       var emptyChild = new CollectionTreeViewItem(null, id++) {
         displayName = $"None ({Filter.GetName()})",
@@ -71,7 +71,7 @@ namespace Aarthificial.Typewriter.Editor.References {
           .ToList();
       }
 
-      var groups = new List<TreeViewItem>();
+      var groups = new List<TreeViewItem<int>>();
       BaseEntry firstEntry = null;
       foreach (var table in tables) {
         var types = _filterVariant.GetMatching().ToList();
@@ -91,7 +91,7 @@ namespace Aarthificial.Typewriter.Editor.References {
         }
 
         var isSingleType = nonEmpty.Count == 1;
-        var group = new TreeViewItem(id++) {
+        var group = new TreeViewItem<int>(id++) {
           displayName =
             isSingleType ? $"{table.name}/{nonEmpty[0]}" : table.name,
           icon = _tableIcon,
@@ -109,7 +109,7 @@ namespace Aarthificial.Typewriter.Editor.References {
 
           var subGroup = isSingleType
             ? group
-            : new TreeViewItem(id++) { displayName = type.ToString() };
+            : new TreeViewItem<int>(id++) { displayName = type.ToString() };
 
           foreach (var entry in entries) {
             if (entry == _currentEntry) {
@@ -168,7 +168,7 @@ namespace Aarthificial.Typewriter.Editor.References {
       }
     }
 
-    private class CollectionTreeViewItem : TreeViewItem {
+    private class CollectionTreeViewItem : TreeViewItem<int> {
       private readonly EntryVariant _variant;
       public readonly BaseEntry Entry;
 
