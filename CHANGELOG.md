@@ -1,3 +1,10 @@
+## [1.3.3](https://github.com/christides11/typewriter/compare/v1.3.2...v1.3.3) (2026-06-21)
+
+
+### Bug Fixes
+
+* Fix TreeView errors in 6.5 ([eca6899](https://github.com/christides11/typewriter/commit/eca68997449027ef6d8ae29a2dd6800a6629a9e8))
+
 ## [1.3.2](https://github.com/christides11/typewriter/compare/v1.3.1...v1.3.2) (2026-05-15)
 
 
