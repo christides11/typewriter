@@ -6,7 +6,8 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace Aarthificial.Typewriter.Editor.Lists {
-  public class EditableListView : BindableElement {
+  [UxmlElement]
+  public partial class EditableListView : BindableElement {
     private readonly Label _title;
     public readonly SimpleList List;
 
@@ -31,21 +32,25 @@ namespace Aarthificial.Typewriter.Editor.Lists {
       List.AddManipulator(new ContextualMenuManipulator(HandleContextMenu));
     }
 
+    [UxmlAttribute]
     public bool Reorderable {
       get => List.reorderable;
       set => List.reorderable = value;
     }
 
+    [UxmlAttribute]
     public SelectionType SelectionType {
       get => List.selectionType;
       set => List.selectionType = value;
     }
 
+    [UxmlAttribute]
     public string Title {
       get => _title.tooltip;
       set => _title.text = value;
     }
 
+    [UxmlAttribute]
     public string TitleTooltip {
       get => _title.tooltip;
       set => _title.tooltip = value;
@@ -119,38 +124,5 @@ namespace Aarthificial.Typewriter.Editor.Lists {
       }
     }
 
-    public new class UxmlFactory : UxmlFactory<EditableListView, UxmlTraits> { }
-
-    public new class UxmlTraits : BindableElement.UxmlTraits {
-      private readonly UxmlBoolAttributeDescription _reorderable =
-        new() { name = "reorderable" };
-
-      private readonly UxmlEnumAttributeDescription<SelectionType>
-        _selectionType = new() { name = "selection-type" };
-      private readonly UxmlStringAttributeDescription _title =
-        new() { name = "title" };
-      private readonly UxmlStringAttributeDescription _tooltip =
-        new() { name = "title-tooltip" };
-
-      public override IEnumerable<UxmlChildElementDescription>
-        uxmlChildElementsDescription {
-        get {
-          yield break;
-        }
-      }
-
-      public override void Init(
-        VisualElement ve,
-        IUxmlAttributes bag,
-        CreationContext cc
-      ) {
-        base.Init(ve, bag, cc);
-        var list = (EditableListView)ve;
-        list.Reorderable = _reorderable.GetValueFromBag(bag, cc);
-        list.SelectionType = _selectionType.GetValueFromBag(bag, cc);
-        list.Title = _title.GetValueFromBag(bag, cc);
-        list.TitleTooltip = _tooltip.GetValueFromBag(bag, cc);
-      }
-    }
   }
 }

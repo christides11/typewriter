@@ -8,7 +8,8 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace Aarthificial.Typewriter.Editor.Layout.Inspector {
-  public class Navigator : VisualElement {
+  [UxmlElement]
+  public partial class Navigator : VisualElement {
     private readonly NavigatorButton _alternative;
     private readonly List<int> _ids = new();
     private readonly List<string> _names = new();
@@ -63,7 +64,5 @@ namespace Aarthificial.Typewriter.Editor.Layout.Inspector {
       descriptor?.CreatePreviousMenu(_entry, _names, _ids, ref current);
       _previous.Configure(_names, _ids, current);
     }
-
-    public new class UxmlFactory : UxmlFactory<Navigator, UxmlTraits> { }
   }
 }

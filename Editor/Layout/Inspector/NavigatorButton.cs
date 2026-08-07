@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.UIElements;
 
 namespace Aarthificial.Typewriter.Editor.Layout.Inspector {
-  public class NavigatorButton : VisualElement {
+  [UxmlElement]
+  public partial class NavigatorButton : VisualElement {
     private readonly Button _button;
     private readonly List<int> _ids = new();
     private readonly List<string> _options = new();
@@ -18,7 +19,8 @@ namespace Aarthificial.Typewriter.Editor.Layout.Inspector {
       Add(_button);
     }
 
-    private string Title {
+    [UxmlAttribute]
+    public string Title {
       get => _title;
       set {
         _title = value;
@@ -83,27 +85,5 @@ namespace Aarthificial.Typewriter.Editor.Layout.Inspector {
       TypewriterUtils.Events.OnEntrySelected(_ids[_dropdown.index]);
     }
 
-    public new class UxmlFactory : UxmlFactory<NavigatorButton, UxmlTraits> { }
-
-    public new class UxmlTraits : VisualElement.UxmlTraits {
-      private readonly UxmlStringAttributeDescription _title =
-        new() { name = "title" };
-
-      public override IEnumerable<UxmlChildElementDescription>
-        uxmlChildElementsDescription {
-        get {
-          yield break;
-        }
-      }
-
-      public override void Init(
-        VisualElement ve,
-        IUxmlAttributes bag,
-        CreationContext cc
-      ) {
-        base.Init(ve, bag, cc);
-        ((NavigatorButton)ve).Title = _title.GetValueFromBag(bag, cc);
-      }
-    }
   }
 }

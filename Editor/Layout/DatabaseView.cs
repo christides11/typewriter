@@ -12,7 +12,8 @@ namespace Aarthificial.Typewriter.Editor.Layout {
   ///   Displays the contents of a Typewriter database using a two-column
   ///   layout.
   /// </summary>
-  public class DatabaseView : VisualElement {
+  [UxmlElement]
+  public partial class DatabaseView : VisualElement {
     private readonly VisualElement _content;
     private readonly Button _create;
     private readonly Button _refresh;
@@ -131,6 +132,5 @@ namespace Aarthificial.Typewriter.Editor.Layout {
       }
     }
 
-    public new class UxmlFactory : UxmlFactory<DatabaseView, UxmlTraits> { }
   }
 }

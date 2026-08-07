@@ -10,7 +10,8 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace Aarthificial.Typewriter.Editor.Layout {
-  public class TableListView : VisualElement {
+  [UxmlElement]
+  public partial class TableListView : VisualElement {
     private readonly ToolbarSearchField _search;
     public readonly SimpleList List;
     private TypewriterDatabase _database;
@@ -161,7 +162,5 @@ namespace Aarthificial.Typewriter.Editor.Layout {
         evt.menu.AppendAction(type.Name, _ => CreateTable(type));
       }
     }
-
-    public new class UxmlFactory : UxmlFactory<TableListView, UxmlTraits> { }
   }
 }

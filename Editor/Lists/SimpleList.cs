@@ -8,7 +8,8 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace Aarthificial.Typewriter.Editor.Lists {
-  public class SimpleList : ListView {
+  [UxmlElement]
+  public partial class SimpleList : ListView {
     private readonly ScrollView _scrollView;
     public readonly List<ItemData> Selection = new();
     public readonly List<ItemData> Source = new();
@@ -204,7 +205,5 @@ namespace Aarthificial.Typewriter.Editor.Lists {
       public int Index;
       public SerializedProperty Property;
     }
-
-    public new class UxmlFactory : UxmlFactory<SimpleList, UxmlTraits> { }
   }
 }

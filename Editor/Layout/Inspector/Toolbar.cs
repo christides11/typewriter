@@ -6,7 +6,8 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace Aarthificial.Typewriter.Editor.Layout.Inspector {
-  public class Toolbar : BindableElement {
+  [UxmlElement]
+  public partial class Toolbar : BindableElement {
 #if UNITY_LOCALIZATION
     private readonly Localization.LocalizedStringBinding _binding;
 #endif
@@ -102,6 +103,5 @@ namespace Aarthificial.Typewriter.Editor.Layout.Inspector {
     }
 #endif
 
-    public new class UxmlFactory : UxmlFactory<Toolbar, UxmlTraits> { }
   }
 }

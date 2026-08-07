@@ -7,7 +7,8 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace Aarthificial.Typewriter.Editor.Layout {
-  public class TabbedView : VisualElement {
+  [UxmlElement]
+  public partial class TabbedView : VisualElement {
     private readonly VisualElement _tabContainer;
     private List<VisualElement> _panes;
     private List<ToolbarToggle> _tabs;
@@ -21,6 +22,7 @@ namespace Aarthificial.Typewriter.Editor.Layout {
       RegisterCallback<AttachToPanelEvent>(HandleAttachToPanel);
     }
 
+    [UxmlAttribute]
     public bool SelectAny { get; set; }
     public event Action<int> TabChanged;
 
@@ -82,27 +84,5 @@ namespace Aarthificial.Typewriter.Editor.Layout {
       TabChanged?.Invoke(value ? index : -1);
     }
 
-    public new class UxmlFactory : UxmlFactory<TabbedView, UxmlTraits> { }
-
-    public new class UxmlTraits : VisualElement.UxmlTraits {
-      private readonly UxmlBoolAttributeDescription _selectAny =
-        new() { name = "select-any" };
-
-      public override IEnumerable<UxmlChildElementDescription>
-        uxmlChildElementsDescription {
-        get {
-          yield return new UxmlChildElementDescription(typeof(VisualElement));
-        }
-      }
-
-      public override void Init(
-        VisualElement ve,
-        IUxmlAttributes bag,
-        CreationContext cc
-      ) {
-        base.Init(ve, bag, cc);
-        ((TabbedView)ve).SelectAny = _selectAny.GetValueFromBag(bag, cc);
-      }
-    }
   }
 }

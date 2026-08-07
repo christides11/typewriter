@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace Aarthificial.Typewriter.Editor.Lists {
-  public class ExpandableListView : VisualElement {
+  [UxmlElement]
+  public partial class ExpandableListView : VisualElement {
     public readonly Foldout Foldout;
     public readonly SimpleList List;
 
@@ -37,6 +38,7 @@ namespace Aarthificial.Typewriter.Editor.Lists {
       );
     }
 
+    [UxmlAttribute]
     public string Text {
       get => Foldout.text;
       set => Foldout.text = value;
@@ -72,21 +74,5 @@ namespace Aarthificial.Typewriter.Editor.Lists {
       List.BindProperty(property);
     }
 
-    public new class
-      UxmlFactory : UxmlFactory<ExpandableListView, UxmlTraits> { }
-
-    public new class UxmlTraits : VisualElement.UxmlTraits {
-      private readonly UxmlStringAttributeDescription _text =
-        new() { name = "text" };
-
-      public override void Init(
-        VisualElement ve,
-        IUxmlAttributes bag,
-        CreationContext cc
-      ) {
-        base.Init(ve, bag, cc);
-        ((ExpandableListView)ve).Text = _text.GetValueFromBag(bag, cc);
-      }
-    }
   }
 }

@@ -15,7 +15,8 @@ using UnityEngine.UIElements;
 using Object = UnityEngine.Object;
 
 namespace Aarthificial.Typewriter.Editor.Layout {
-  public class EntryListView : VisualElement {
+  [UxmlElement]
+  public partial class EntryListView : VisualElement {
     private readonly VisualElement _container;
     private readonly ExpandableListView _events;
     private readonly ExpandableListView _facts;
@@ -332,6 +333,5 @@ namespace Aarthificial.Typewriter.Editor.Layout {
       HandleSelection(null);
     }
 
-    public new class UxmlFactory : UxmlFactory<EntryListView, UxmlTraits> { }
   }
 }

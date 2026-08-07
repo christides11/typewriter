@@ -8,7 +8,8 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace Aarthificial.Typewriter.Editor.Layout.Inspector {
-  public class Customization : VisualElement {
+  [UxmlElement]
+  public partial class Customization : VisualElement {
     private readonly TabbedView _container;
     private readonly Dictionary<string, EditableListView> _lists = new();
     private readonly (string, string)[] _possibleProperties = {
@@ -55,6 +56,5 @@ namespace Aarthificial.Typewriter.Editor.Layout.Inspector {
       }
     }
 
-    public new class UxmlFactory : UxmlFactory<Customization, UxmlTraits> { }
   }
 }

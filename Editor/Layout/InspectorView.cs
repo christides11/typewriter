@@ -4,7 +4,8 @@ using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 
 namespace Aarthificial.Typewriter.Editor.Layout {
-  public class InspectorView : VisualElement {
+  [UxmlElement]
+  public partial class InspectorView : VisualElement {
     private readonly PropertyField _field;
     private SerializedProperty _property;
 
@@ -28,6 +29,5 @@ namespace Aarthificial.Typewriter.Editor.Layout {
       }
     }
 
-    public new class UxmlFactory : UxmlFactory<InspectorView, UxmlTraits> { }
   }
 }
