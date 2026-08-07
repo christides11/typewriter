@@ -1,3 +1,10 @@
+## [1.3.4](https://github.com/christides11/typewriter/compare/v1.3.3...v1.3.4) (2026-08-07)
+
+
+### Bug Fixes
+
+* Use new UxmlFactory method ([fd39cfe](https://github.com/christides11/typewriter/commit/fd39cfe73762c926f5473abdba909ac6069bb1c5))
+
 ## [1.3.3](https://github.com/christides11/typewriter/compare/v1.3.2...v1.3.3) (2026-06-21)
 
 
