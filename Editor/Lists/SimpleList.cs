@@ -147,6 +147,10 @@ namespace Aarthificial.Typewriter.Editor.Lists {
         style.height = Source.Count * fixedItemHeight;
       }
 
+      if (!ReferenceEquals(itemsSource, Source)) {
+        itemsSource = Source;
+      }
+
       Rebuild();
       SelectInitial();
       UpdateSelection();
