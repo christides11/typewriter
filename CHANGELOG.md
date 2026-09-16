@@ -1,3 +1,10 @@
+## [1.3.5](https://github.com/christides11/typewriter/compare/v1.3.4...v1.3.5) (2026-09-16)
+
+
+### Bug Fixes
+
+* Fix SimpleList not rendering items ([c064386](https://github.com/christides11/typewriter/commit/c064386a76cba15795ca35e8105d7a7e1835b40d))
+
 ## [1.3.4](https://github.com/christides11/typewriter/compare/v1.3.3...v1.3.4) (2026-08-07)
 
 
