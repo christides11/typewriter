@@ -1,3 +1,10 @@
+## [1.3.6](https://github.com/christides11/typewriter/compare/v1.3.5...v1.3.6) (2026-09-22)
+
+
+### Bug Fixes
+
+* EntityID error ([2b48898](https://github.com/christides11/typewriter/commit/2b488981a266766d2cc16cb38fb62c0bf5358f0d))
+
 ## [1.3.5](https://github.com/christides11/typewriter/compare/v1.3.4...v1.3.5) (2026-09-16)
 
 
