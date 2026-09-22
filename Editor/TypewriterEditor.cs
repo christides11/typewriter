@@ -46,9 +46,9 @@ namespace Aarthificial.Typewriter.Editor {
     }
 
     [OnOpenAsset]
-    public static bool OpenGraphAsset(int instanceID, int line)
+    public static bool OpenGraphAsset(EntityId entityId, int line)
     {
-      var asset = EditorUtility.EntityIdToObject(instanceID);
+      var asset = EditorUtility.EntityIdToObject(entityId);
       if (!(asset is TypewriterDatabase)) return false;
 
       var ew = OpenWindow(asset as TypewriterDatabase);
